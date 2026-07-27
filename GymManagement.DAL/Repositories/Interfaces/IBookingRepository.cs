@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace GymManagement.DAL.Repositories.Interfaces
 {
-    public interface IMembershipRepository : IGenericRepository<MemberPlans>
+    public interface IBookingRepository : IGenericRepository<MemberSessions>
     {
-        IEnumerable<MemberPlans> GetAllWithMemberAndPlans(Func<MemberPlans, bool>? condition = null);
-
+        public Task<List<MemberSessions>> GetBookingsBySessionIdAsync(int sessionId, CancellationToken ct = default);
     }
-
 }

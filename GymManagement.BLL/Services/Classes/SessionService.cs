@@ -29,7 +29,7 @@ namespace GymManagement.BLL.Services.Classes
 
         public async Task<Result<IEnumerable<SessionViewModel>>> GetAllSessionsAsync(CancellationToken ct = default)
         {
-            var sessions = await _sessionRepo.GetSessionsWithIncludeAsync(ct);
+            var sessions = await _sessionRepo.GetSessionsWithIncludeAsync(ct:ct);
             if (sessions == null || !sessions.Any()) return Result<IEnumerable<SessionViewModel>>.Ok([]);
 
             var mappedSessions = new List<SessionViewModel>();

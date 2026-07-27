@@ -17,11 +17,18 @@ namespace GymManagement.DAL.Repositories.Classes
 
         public ISessionRepository SessionRepository { get; }
         public IMembershipRepository MembershipRepository { get; }
-        public UnitOfWork(GymDbContext dbContext, ISessionRepository sessionRepository, IMembershipRepository membershipRepository)
+        public IBookingRepository BookingRepository { get; }
+        public UnitOfWork(
+            GymDbContext dbContext, 
+            ISessionRepository sessionRepository, 
+            IMembershipRepository membershipRepository,
+            IBookingRepository bookingRepository
+            )
         {
             _dbContext = dbContext;
             SessionRepository = sessionRepository;
             MembershipRepository = membershipRepository;
+            BookingRepository = bookingRepository;
         }
     
 
