@@ -28,6 +28,8 @@ namespace GymManagement
             builder.Services.AddScoped<IMembershipService, MembershipService>();
             builder.Services.AddScoped<ISessionRepository, SessionRepository>();
             builder.Services.AddScoped<IMembershipRepository, MembershipRepository>();
+            builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+            builder.Services.AddScoped<IBookingService, BookingService>();
 
             builder.Services.AddDbContext<GymDbContext>(options =>
             {
